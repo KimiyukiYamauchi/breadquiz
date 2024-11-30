@@ -31,32 +31,332 @@
   },
   {
     "investmentNumber": 6,
-    "question": "(3)は、計量スプーンですりきりで計量する。",
-    "choices": ["粉類", "液体", "油類"],
-    "answer": "粉類"
+    "question": "バターの3大特性は(6)性、クリーミング性、ショートニング性である。",
+    "choices": ["伸展", "可塑", "収縮"],
+    "answer": "可塑"
   },
   {
     "investmentNumber": 7,
-    "question": "パン作りに適する小麦粉は、たんぱく質を多く含む(1)である。",
-    "choices": ["中力粉", "強力粉", "薄力粉"],
-    "answer": "強力粉"
+    "question": "仕込み水の温度は、(7)℃に設定する。",
+    "choices": ["10~12", "42~43", "98~100"],
+    "answer": "42~43"
   },
   {
     "investmentNumber": 8,
-    "question": "パンは、(2)の活動によって発酵する。",
-    "choices": ["バター", "酵母", "塩"],
-    "answer": "酵母"
+    "question": "卵は、パンの中身をしっとりと(8)仕上げる。",
+    "choices": ["やわらかく", "かたく", "重く"],
+    "answer": "やわらかく"
   },
   {
     "investmentNumber": 9,
-    "question": "(3)は、計量スプーンですりきりで計量する。",
-    "choices": ["粉類", "液体", "油類"],
-    "answer": "粉類"
+    "question": "卵1個は、(9)gで計量する。",
+    "choices": ["5", "40", "52"],
+    "answer": "52"
   },
   {
     "investmentNumber": 10,
-    "question": "(3)は、計量スプーンですりきりで計量する。",
-    "choices": ["粉類", "液体", "油類"],
-    "answer": "粉類"
+    "question": "小麦粉のたんぱく質に水を加えてこねると(10)と呼ばれる粘弾性の物質を作る。",
+    "choices": ["炭酸ガス", "アルコール", "グルテン"],
+    "answer": "グルテン"
+  },
+  {
+    "investmentNumber": 11,
+    "question": "バターや卵がたくさん入った生地を(11)な生地という。",
+    "choices": ["リーン", "リッチ", "シンプル"],
+    "answer": "リッチ"
+  },
+  {
+    "investmentNumber": 12,
+    "question": "台についた生地を集めたり、パンを分割する時に使う道具を(12)という。",
+    "choices": ["ボウル", "木ベラ", "スケッパー"],
+    "answer": "スケッパー"
+  },
+  {
+    "investmentNumber":13,
+    "question": "パン生地をのばしたり、形を作る時に使う棒を(13)という。",
+    "choices": ["すりこぎ", "凸凹めん棒", "ガス抜きめん棒"],
+    "answer": "ガス抜きめん棒"
+  },
+  {
+    "investmentNumber": 14,
+    "question": "パンを二次発酵させる時に使用する布を(14)という。",
+    "choices": ["キャンバス地", "デニム地", "タオル地"],
+    "answer": "キャンバス地"
+  },
+  {
+    "investmentNumber": 15,
+    "question": "パンを発酵させる時に、温度を保つ器具を(15)という。",
+    "choices": ["高温器", "発酵器", "低温器"],
+    "answer": "発酵器"
+  },
+  {
+    "investmentNumber": 16,
+    "question": "発酵バターとは、牛乳から分離したクリームを(16)させて作るバター。",
+    "choices": ["乳酸発酵", "冷凍", "乾燥"],
+    "answer": "乳酸発酵"
+  },
+  {
+    "investmentNumber": 17,
+    "question": "仕込み水が入ったら、よく(17)。",
+    "choices": ["たたく", "混ぜる", "寝かす"],
+    "answer": "混ぜる"
+  },
+  {
+    "investmentNumber": 18,
+    "question": "こねる時は、手の(18)を使ってこねる。",
+    "choices": ["腹", "爪", "首"],
+    "answer": "腹"
+  },
+  {
+    "investmentNumber": 19,
+    "question": "こねるとは、生地の(19)を作る作業をいう。",
+    "choices": ["グルテン", "たんぱく質", "アルコール"],
+    "answer": "グルテン"
+  },
+  {
+    "investmentNumber": 20,
+    "question": "生地をたたくことによって、グルテン組織をさらに(20)することができる。",
+    "choices": ["分離", "吸収", "強化"],
+    "answer": "強化"
+  },
+  {
+    "investmentNumber": 21,
+    "question": "基本的なこねあがりの見極めは、生地の表面が(21)かどうか確認する。",
+    "choices": ["なめらか", "ザラザラ", "ゴワゴワ"],
+    "answer": "リッチ"
+  },
+  {
+    "investmentNumber": 22,
+    "question": "生地を発酵させる時は、(22)ととのえて行う。",
+    "choices": ["三角に", "四角く", "丸く"],
+    "answer": "丸く"
+  },
+  {
+    "investmentNumber":23,
+    "question": "一次発酵後の生地の大きさは、(23)倍位になっている。",
+    "choices": ["5~6", "1.5~2", "100"],
+    "answer": "1.5~2"
+  },
+  {
+    "investmentNumber": 24,
+    "question": "指で穴をあけて、発酵を見極める作業を(24)という。",
+    "choices": ["ハンドテスト", "ヘッドテスト", "フィンガーテスト"],
+    "answer": "フィンガーテスト"
+  },
+  {
+    "investmentNumber": 25,
+    "question": "ガス抜きは、手を(25)にして行う。",
+    "choices": ["グー", "チョキ", "パー"],
+    "answer": "パー"
+  },
+  {
+    "investmentNumber": 26,
+    "question": "ベンチタイムとは、生地を(26)ための時間のこと。",
+    "choices": ["休ませる", "乾燥させる", "冷やす"],
+    "answer": "休ませる"
+  },
+  {
+    "investmentNumber": 27,
+    "question": "キャンバス地は、めが粗いので(27)がある。",
+    "choices": ["密着性", "保温性", "通気性"],
+    "answer": "通気性"
+  },
+  {
+    "investmentNumber": 28,
+    "question": "焼成前には、必ずオーブンに(28)を入れておく。",
+    "choices": ["天板", "予熱", "粗熱"],
+    "answer": "予熱"
+  },
+  {
+    "investmentNumber": 29,
+    "question": "焼成中は、オーブンの温度が下がらないように開け閉めは(29)行う。",
+    "choices": ["激しく", "敏速に", "ゆっくり"],
+    "answer": "敏速に"
+  },
+  {
+    "investmentNumber": 30,
+    "question": "パンにフルーツを混ぜ込む場合は(30)のものを使用する。",
+    "choices": ["冷凍", "乾燥", "生"],
+    "answer": "乾燥"
+  },
+  {
+    "investmentNumber": 31,
+    "question": "液体の油脂は、(31)を加えるタイミングで計量する。",
+    "choices": ["大ボウル", "小ボウル", "仕込み水"],
+    "answer": "小ボウル"
+  },
+  {
+    "investmentNumber": 32,
+    "question": "カスタードクリームを作った後は、密着ラップをしてから(32)する。",
+    "choices": ["加熱", "保存", "急冷"],
+    "answer": "急冷"
+  },
+  {
+    "investmentNumber": 33,
+    "question": "計量スプーンで1/2を計量する際は、見た目で高さ(33)で計量する。",
+    "choices": ["1/2", "2/3", "3/4"],
+    "answer": "2/3"
+  },
+  {
+    "investmentNumber": 34,
+    "question": "グラハムとは、(34)のこと。",
+    "choices": ["ライ麦", "全粒粉", "小麦胚芽"],
+    "answer": "全粒粉"
+  },
+  {
+    "investmentNumber": 35,
+    "question": "成形時、めん棒で生地をのばす時は、とじめを(35)にする。",
+    "choices": ["上", "横", "斜め"],
+    "answer": "上"
+  },
+  {
+    "investmentNumber": 36,
+    "question": "ナッツ類をパン生地に混ぜ込む時は、あらかじめ(36)しておくとよい。",
+    "choices": ["ロースト", "冷凍", "ペースト"],
+    "answer": "ロースト"
+  },
+  {
+    "investmentNumber": 37,
+    "question": "スキムミルクは牛乳から(37)を除去したもの。",
+    "choices": ["乳脂肪分", "甘味", "カルシウム"],
+    "answer": "乳脂肪分"
+  },
+  {
+    "investmentNumber": 38,
+    "question": "ライ麦は、独特の(38)と香ばしさが特徴である。",
+    "choices": ["甘味", "酸味", "辛味"],
+    "answer": "酸味"
+  },
+  {
+    "investmentNumber": 39,
+    "question": "バケットを作る時には、粉は(39)を使用する。",
+    "choices": ["薄力粉", "米粉", "フランスパン専用粉"],
+    "answer": "フランスパン専用粉"
+  },
+  {
+    "investmentNumber": 40,
+    "question": "バケットを焼成する時には、パンに(40)をかけて焼成する。",
+    "choices": ["霧", "油", "薄力粉"],
+    "answer": "霧"
+  },
+  {
+    "investmentNumber": 41,
+    "question": "クロワッサンとは、フランス語で(41)の意味。",
+    "choices": ["満月", "三日月", "半月"],
+    "answer": "三日月"
+  },
+  {
+    "investmentNumber": 42,
+    "question": "クロワッサンの特徴は、パイのようにバターを(42)ことである。",
+    "choices": ["はさむ", "練り込む", "折り込む"],
+    "answer": "折り込む"
+  },
+  {
+    "investmentNumber": 43,
+    "question": "生イーストは(43)℃以下だと休眠し活動を停止する。開封前後にかかわらず、冷蔵庫で保管する。",
+    "choices": ["0", "4", "10"],
+    "answer": "4"
+  },
+  {
+    "investmentNumber": 44,
+    "question": "酵母は熱に弱く(44)℃を超すと活動が極端に下がり、60℃に達すると死滅が進む。",
+    "choices": ["40", "45", "50"],
+    "answer": "45"
+  },
+  {
+    "investmentNumber": 45,
+    "question": "ベーグルは、焼く直前に(45)で生地を茹でる。",
+    "choices": ["熱湯", "水", "蒸気"],
+    "answer": "熱湯"
+  },
+  {
+    "investmentNumber": 46,
+    "question": "湯種とは、小麦粉などを(46)でこねたもの。",
+    "choices": ["冷水", "炭酸水", "熱湯"],
+    "answer": "熱湯"
+  },
+  {
+    "investmentNumber": 47,
+    "question": "リュスティックは、こねずに(47)をくり返して作るハード系のパン。",
+    "choices": ["揉む", "折り込み", "パンチ"],
+    "answer": "パンチ"
+  },
+  {
+    "investmentNumber": 48,
+    "question": "カレーパンを揚げる時の、油の温度は(48)℃にするとよい。",
+    "choices": ["120~130", "170~180", "200~210"],
+    "answer": "170~180"
+  },
+  {
+    "investmentNumber": 49,
+    "question": "クイニーアマンとは『(49)』という意味。",
+    "choices": ["バターの菓子", "砂糖の菓子", "層の菓子"],
+    "answer": "フランスパン専用粉"
+  },
+  {
+    "investmentNumber": 50,
+    "question": "こねの前に、油脂·砂糖·卵などを泡立ててから加える手法を(50)という。",
+    "choices": ["パンチ", "折り込み", "クリーミング"],
+    "answer": "クリーミング"
+  },
+  {
+    "investmentNumber": 51,
+    "question": "小麦粉に含まれる小麦タンパクは、水を加え、こねる·たたくなどの物理的な力が加わると、弾力性と粘着性を持つ網目状の組織である(51)を形成する。",
+    "choices": ["硫化アリル", "アルコール", "グルテン"],
+    "answer": "グルテン"
+  },
+  {
+    "investmentNumber": 52,
+    "question": "強力粉のたんぱく質の割合は、(52)%前後で、パン·パスタ·餃子の皮などに使われる。",
+    "choices": ["10~13", "7~8", "21~23"],
+    "answer": "10~13"
+  },
+  {
+    "investmentNumber": 53,
+    "question": "(53)は小麦を全て一緒に製粉したもので、皮や胚芽も含まれ、食物繊維やビタミンB群が豊富である。",
+    "choices": ["ライ麦", "全粒粉", "薄力粉"],
+    "answer": "全粒粉"
+  },
+  {
+    "investmentNumber": 54,
+    "question": "砂糖は発酵の際に酵母の(54)となる。",
+    "choices": ["栄養分", "妨げ", "膨張材"],
+    "answer": "栄養分"
+  },
+  {
+    "investmentNumber": 55,
+    "question": "卵を加えて作ったパンは、卵黄に含まれる(55)が老化を遅らせ、日にちが経ってもやわらかさを保つ。",
+    "choices": ["色素", "レシチン", "酸素"],
+    "answer": "レシチン"
+  },
+  {
+    "investmentNumber": 56,
+    "question": "生地を最終的な形にすることを(56)という。",
+    "choices": ["焼成", "ベンチタイム", "成形"],
+    "answer": "成形"
+  },
+  {
+    "investmentNumber": 57,
+    "question": "クープとはフランス語で(57)のことを指す。",
+    "choices": ["切り込み", "ナイフ", "装飾"],
+    "answer": "切り込み"
+  },
+  {
+    "investmentNumber": 58,
+    "question": "クープを入れることによって、パン生地の膨張時における生地内部の(58)を逃して棒状のパンの形をととのえることができる。",
+    "choices": ["水分", "塩分", "圧力"],
+    "answer": "圧力"
+  },
+  {
+    "investmentNumber": 59,
+    "question": "サクッと軽い食感が特徴のワッフルシュガーとも呼ばれるあられ糖は、(59)から作られる軽くて大粒の砂糖。",
+    "choices": ["グラニュー糖", "上白糖", "黒糖"],
+    "answer": "フランスパン専用粉"
+  },
+  {
+    "investmentNumber": 60,
+    "question": "パンの外側の焼き色がついた部分を(60)という。",
+    "choices": ["クラスト", "クラム", "ハード"],
+    "answer": "クラスト"
   }
 ]
