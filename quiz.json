@@ -1,0 +1,62 @@
+[
+  {
+    "investmentNumber": 1,
+    "question": "パン作りに適する小麦粉は、たんぱく質を多く含む(1)である。",
+    "choices": ["中力粉", "強力粉", "薄力粉"],
+    "answer": "強力粉"
+  },
+  {
+    "investmentNumber": 2,
+    "question": "パンは、(2)の活動によって発酵する。",
+    "choices": ["バター", "酵母", "塩"],
+    "answer": "酵母"
+  },
+  {
+    "investmentNumber": 3,
+    "question": "(3)は、計量スプーンですりきりで計量する。",
+    "choices": ["粉類", "液体", "油類"],
+    "answer": "粉類"
+  },
+  {
+    "investmentNumber": 4,
+    "question": "生地にめん棒をあてすぎると、(4)。",
+    "choices": ["やわらかくなる", "めがつまる", "腐敗しにくくなる"],
+    "answer": "めがつまる"
+  },
+  {
+    "investmentNumber": 5,
+    "question": "副材料として欠かせない油脂は、(5)をよくしてコクを与える。",
+    "choices": ["形", "高さ", "風味"],
+    "answer": "風味"
+  },
+  {
+    "investmentNumber": 6,
+    "question": "(3)は、計量スプーンですりきりで計量する。",
+    "choices": ["粉類", "液体", "油類"],
+    "answer": "粉類"
+  },
+  {
+    "investmentNumber": 7,
+    "question": "パン作りに適する小麦粉は、たんぱく質を多く含む(1)である。",
+    "choices": ["中力粉", "強力粉", "薄力粉"],
+    "answer": "強力粉"
+  },
+  {
+    "investmentNumber": 8,
+    "question": "パンは、(2)の活動によって発酵する。",
+    "choices": ["バター", "酵母", "塩"],
+    "answer": "酵母"
+  },
+  {
+    "investmentNumber": 9,
+    "question": "(3)は、計量スプーンですりきりで計量する。",
+    "choices": ["粉類", "液体", "油類"],
+    "answer": "粉類"
+  },
+  {
+    "investmentNumber": 10,
+    "question": "(3)は、計量スプーンですりきりで計量する。",
+    "choices": ["粉類", "液体", "油類"],
+    "answer": "粉類"
+  }
+]
