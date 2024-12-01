@@ -28,7 +28,7 @@ function displayQuestion(quiz) {
   questionData.choices.forEach(choice => {
     const button = document.createElement('button');
     button.textContent = choice;
-    button.onclick = () => handleAnswer(choice, questionData.answer, quiz);
+    button.onclick = () => handleAnswer(choice, questionData.answer, questionData.explanation, quiz);
     quizContainer.appendChild(button);
   });
 
@@ -39,7 +39,7 @@ function displayQuestion(quiz) {
   quizContainer.appendChild(feedbackElement);
 }
 
-function handleAnswer(selectedChoice, correctAnswer, quiz) {
+function handleAnswer(selectedChoice, correctAnswer, explanation, quiz) {
   const feedbackElement = document.getElementById('feedback');
   if (selectedChoice === correctAnswer) {
     feedbackElement.textContent = '正解！';
@@ -57,6 +57,17 @@ function handleAnswer(selectedChoice, correctAnswer, quiz) {
   feedbackElement.style.border = '2px solid';
   feedbackElement.style.borderRadius = '10px';
   feedbackElement.style.backgroundColor = '#f9f9f9';
+
+  // Add explanation below the feedback
+  const explanationElement = document.createElement('div');
+  explanationElement.textContent = `解説: ${explanation}`;
+  explanationElement.style.marginTop = '10px';
+  explanationElement.style.fontSize = '16px';
+  explanationElement.style.fontWeight = 'normal';
+  explanationElement.style.textAlign = 'left';
+  explanationElement.style.padding = '10px';
+  explanationElement.style.borderTop = '1px solid #ddd';
+  feedbackElement.appendChild(explanationElement);
 
   currentQuestionIndex++;
   if (currentQuestionIndex < quiz.length) {
