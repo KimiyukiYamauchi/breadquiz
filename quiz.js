@@ -1,3 +1,9 @@
+// 不正解の質問と回答を保持するリスト
+const incorrectQuestions = [];
+const incorrectAnswers = [];
+
+
+// サンプルデータ (quiz.jsから動的に渡されることを想定)
 async function fetchQuiz() {
   const response = await fetch('quiz.json');
   return await response.json();
@@ -41,6 +47,8 @@ function displayQuestion(quiz) {
 
 function handleAnswer(selectedChoice, correctAnswer, explanation, quiz) {
   const feedbackElement = document.getElementById('feedback');
+  const nextButton = document.getElementById('next-question');
+
   if (selectedChoice === correctAnswer) {
     feedbackElement.textContent = '正解！';
     feedbackElement.style.color = 'green';
@@ -48,6 +56,13 @@ function handleAnswer(selectedChoice, correctAnswer, explanation, quiz) {
   } else {
     feedbackElement.textContent = `不正解！正解は「${correctAnswer}」です。`;
     feedbackElement.style.color = 'red';
+
+    // 不正解の質問と回答をリストに追加
+    incorrectQuestions.push(quiz[currentQuestionIndex]);
+    incorrectAnswers.push({
+      question: quiz[currentQuestionIndex],
+      userAnswer: selectedChoice,
+    });
   }
 
   feedbackElement.style.fontSize = '20px';
@@ -70,18 +85,49 @@ function handleAnswer(selectedChoice, correctAnswer, explanation, quiz) {
   feedbackElement.appendChild(explanationElement);
 
   currentQuestionIndex++;
+
   if (currentQuestionIndex < quiz.length) {
-    document.getElementById('next-question').style.display = 'block';
+    nextButton.textContent = '次へ';
+    nextButton.style.display = 'block';
+    nextButton.onclick = () => displayQuestion(quiz);
   } else {
-    displayFinalScore();
+    nextButton.textContent = '確認';
+    nextButton.style.display = 'block';
+    nextButton.onclick = displayFinalScore;
   }
 }
 
 function displayFinalScore() {
-  const quizContainer = document.getElementById('quiz-container');
-  quizContainer.innerHTML = `<h2>Your score: ${score}</h2>`;
-  document.getElementById('progress').textContent = `${quiz.length}問中終了`;
-  document.getElementById('next-question').style.display = 'none';
+  const quizWrapper = document.getElementById('quiz-wrapper');
+  quizWrapper.innerHTML = `
+    <h2>結果発表</h2>
+    <p>あなたのスコアは ${score} 点です。</p>
+  `;
+
+  if (incorrectQuestions.length > 0) {
+    const table = document.createElement('table');
+    table.innerHTML = `
+      <thead>
+        <tr>
+          <th>問題番号</th>
+          <th>問題</th>
+          <th>正解</th>
+        </tr>
+      </thead>
+      <tbody>
+        ${incorrectQuestions
+          .map((question, index) => `
+            <tr>
+              <td>${question.investmentNumber}</td>
+              <td>${question.question}</td>
+              <td>${question.answer}</td>
+            </tr>
+          `)
+          .join('')}
+      </tbody>
+    `;
+    quizWrapper.appendChild(table);
+  }
 }
 
 document.getElementById('next-question').onclick = async function () {

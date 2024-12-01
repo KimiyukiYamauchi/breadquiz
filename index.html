@@ -13,6 +13,23 @@
     <div id="quiz-container"></div>
     <button id="next-question" style="display:none;">Next Question</button>
   </div>
+  <div id="final-score-wrapper" style="display:none;">
+    <h1>Final Score</h1>
+    <p id="score-text"></p>
+    <table id="incorrect-table" style="display:none;">
+      <thead>
+        <tr>
+          <th>問題番号</th>
+          <th>問題文</th>
+          <th>正解</th>
+          <th>選択</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Rows will be dynamically inserted here -->
+      </tbody>
+    </table>
+  </div>
   <script src="quiz.js"></script>
 </body>
 </html>
