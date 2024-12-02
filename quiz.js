@@ -85,6 +85,12 @@ function displayQuestion(quiz) {
   quizContainer.appendChild(feedbackElement);
 }
 
+// 現在のスコアを表示する関数
+function updateScoreDisplay() {
+  const scoreDisplay = document.getElementById('score-display');
+  scoreDisplay.textContent = `${score}問正解`;
+}
+
 // 回答を処理
 function handleAnswer(selectedChoice, correctAnswer, explanation, quiz) {
   const feedbackElement = document.getElementById('feedback');
@@ -102,6 +108,7 @@ function handleAnswer(selectedChoice, correctAnswer, explanation, quiz) {
     feedbackElement.textContent = '正解！';
     feedbackElement.style.color = 'green';
     score++;
+    updateScoreDisplay(); // スコア表示を更新
   } else {
     feedbackElement.textContent = `不正解！正解は「${correctAnswer}」です。`;
     feedbackElement.style.color = 'red';

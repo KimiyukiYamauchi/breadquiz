@@ -22,11 +22,42 @@ body {
   overflow-y: auto; /* スクロール可能にする */
   max-height: calc(100vh - 80px); /* 固定ヘッダー分を差し引く */
   margin-top: 60px; /* 固定ヘッダー分のマージン */
+  position: relative; /* 子要素の位置調整に必要 */
+}
+
+/* 固定ヘッダー */
+#header {
+  position: absolute; /* 親（#quiz-wrapper）の中で固定 */
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #f1f1f1;
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-between; /* 左右に要素を配置 */
+  align-items: center;
+  font-size: 18px;
+  border-bottom: 2px solid #ddd;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+/* 左側の進捗表示 */
+#progress {
+  margin-left: 20px;
+  font-weight: bold;
+}
+
+/* 正解数表示 */
+#score-display {
+  margin-right: 20px;
+  font-weight: bold;
+  color: #007bff;
 }
 
 /* クイズコンテナ */
 #quiz-container {
-  margin-top: 20px;
+  margin-top: 60px; /* ヘッダー分のスペースを確保 */
   text-align: left; /* 問題文を左寄せ */
 }
 
@@ -34,13 +65,6 @@ body {
 #quiz-container h2 {
   margin: 0 0 20px;
   font-size: 18px;
-  color: #333;
-}
-
-/* 見出しのスタイル */
-h1 {
-  margin: 0;
-  font-size: 24px;
   color: #333;
 }
 
@@ -84,19 +108,4 @@ th, td {
 }
 th {
   background-color: #f2f2f2;
-}
-
-/* 固定ヘッダー */
-#progress {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-color: #f1f1f1;
-  padding: 10px 0;
-  text-align: center;
-  z-index: 1000;
-  font-size: 18px;
-  border-bottom: 2px solid #ddd;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
