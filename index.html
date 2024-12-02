@@ -7,11 +7,21 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div id="quiz-wrapper">
+  <div id="mode-selection">
+    <h1>クイズモード選択</h1>
+    <button id="normal-mode">通常モード</button>
+    <button id="random-mode">ランダムモード</button>
+    <div id="random-options" style="display: none;">
+      <label for="random-count">出題する問題数:</label>
+      <input type="number" id="random-count" min="1" step="1">
+      <button id="start-random">開始</button>
+    </div>
+  </div>
+  <div id="quiz-wrapper" style="display:none;">
     <h1>ブレッド問題</h1>
     <span id="progress">1問目/3問中</span>
     <div id="quiz-container"></div>
-    <button id="next-question" style="display:none;">Next Question</button>
+    <button id="next-question" style="display:none;">次へ</button>
   </div>
   <script src="quiz.js"></script>
 </body>

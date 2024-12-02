@@ -1,35 +1,76 @@
-// 不正解の質問と回答を保持するリスト
 const incorrectQuestions = [];
 const incorrectAnswers = [];
+let currentQuestionIndex = 0;
+let score = 0;
+let selectedQuiz = [];
 
-// サンプルデータ (quiz.jsから動的に渡されることを想定)
+// クイズデータをフェッチ
 async function fetchQuiz() {
   const response = await fetch('quiz.json');
   return await response.json();
 }
 
-let currentQuestionIndex = 0;
-let score = 0;
+// 配列をシャッフルする関数
+function shuffleArray(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+}
 
+// モード選択時の処理
+document.getElementById('normal-mode').addEventListener('click', async () => {
+  selectedQuiz = await fetchQuiz();
+  startQuiz(selectedQuiz);
+});
+
+document.getElementById('random-mode').addEventListener('click', () => {
+  document.getElementById('random-options').style.display = 'block';
+});
+
+document.getElementById('start-random').addEventListener('click', async () => {
+  const totalQuestions = parseInt(document.getElementById('random-count').value);
+  if (isNaN(totalQuestions) || totalQuestions < 1) {
+    alert('正しい問題数を入力してください');
+    return;
+  }
+  const allQuestions = await fetchQuiz();
+  shuffleArray(allQuestions);
+  selectedQuiz = allQuestions.slice(0, totalQuestions);
+  startQuiz(selectedQuiz);
+});
+
+// クイズを開始
+function startQuiz(quiz) {
+  document.getElementById('mode-selection').style.display = 'none';
+  document.getElementById('quiz-wrapper').style.display = 'block';
+  currentQuestionIndex = 0;
+  score = 0;
+  displayQuestion(quiz);
+}
+
+// クイズの進捗を更新
 function updateProgress(current, total) {
   const progressElement = document.getElementById('progress');
   progressElement.textContent = `${current}問目/${total}問中`;
 }
 
+// 質問を表示
 function displayQuestion(quiz) {
   const quizContainer = document.getElementById('quiz-container');
   quizContainer.innerHTML = '';
 
   const questionData = quiz[currentQuestionIndex];
 
-  // Update progress
+  // 進捗更新
   updateProgress(currentQuestionIndex + 1, quiz.length);
 
-  // Display the question
+  // 質問表示
   const questionElement = document.createElement('h2');
   questionElement.textContent = questionData.question;
   quizContainer.appendChild(questionElement);
 
+  // 選択肢表示
   questionData.choices.forEach(choice => {
     const button = document.createElement('button');
     button.textContent = choice;
@@ -37,13 +78,14 @@ function displayQuestion(quiz) {
     quizContainer.appendChild(button);
   });
 
-  // Add an area for feedback (correct/incorrect message)
+  // フィードバックエリア
   const feedbackElement = document.createElement('div');
   feedbackElement.id = 'feedback';
   feedbackElement.style.marginTop = '20px';
   quizContainer.appendChild(feedbackElement);
 }
 
+// 回答を処理
 function handleAnswer(selectedChoice, correctAnswer, explanation, quiz) {
   const feedbackElement = document.getElementById('feedback');
   const nextButton = document.getElementById('next-question');
@@ -51,9 +93,9 @@ function handleAnswer(selectedChoice, correctAnswer, explanation, quiz) {
   // ボタンの無効化
   const buttons = document.querySelectorAll('#quiz-container button');
   buttons.forEach(button => {
-    button.disabled = true; // ボタンを無効化
-    button.style.opacity = '0.6'; // 無効化時の視覚効果
-    button.style.cursor = 'not-allowed'; // ポインタ変更
+    button.disabled = true;
+    button.style.opacity = '0.6';
+    button.style.cursor = 'not-allowed';
   });
 
   if (selectedChoice === correctAnswer) {
@@ -63,8 +105,6 @@ function handleAnswer(selectedChoice, correctAnswer, explanation, quiz) {
   } else {
     feedbackElement.textContent = `不正解！正解は「${correctAnswer}」です。`;
     feedbackElement.style.color = 'red';
-
-    // 不正解の質問と回答をリストに追加
     incorrectQuestions.push(quiz[currentQuestionIndex]);
     incorrectAnswers.push({
       question: quiz[currentQuestionIndex],
@@ -73,26 +113,13 @@ function handleAnswer(selectedChoice, correctAnswer, explanation, quiz) {
   }
 
   feedbackElement.style.fontSize = '20px';
-  feedbackElement.style.fontWeight = 'bold';
-  feedbackElement.style.textAlign = 'center';
-  feedbackElement.style.padding = '10px';
-  feedbackElement.style.border = '2px solid';
-  feedbackElement.style.borderRadius = '10px';
-  feedbackElement.style.backgroundColor = '#f9f9f9';
 
-  // Add explanation below the feedback
+  // 解説追加
   const explanationElement = document.createElement('div');
   explanationElement.textContent = `解説: ${explanation}`;
-  explanationElement.style.marginTop = '10px';
-  explanationElement.style.fontSize = '16px';
-  explanationElement.style.fontWeight = 'normal';
-  explanationElement.style.textAlign = 'left';
-  explanationElement.style.padding = '10px';
-  explanationElement.style.borderTop = '1px solid #ddd';
   feedbackElement.appendChild(explanationElement);
 
   currentQuestionIndex++;
-
   if (currentQuestionIndex < quiz.length) {
     nextButton.textContent = '次へ';
     nextButton.style.display = 'block';
@@ -104,6 +131,7 @@ function handleAnswer(selectedChoice, correctAnswer, explanation, quiz) {
   }
 }
 
+// 最終スコアを表示
 function displayFinalScore() {
   const quizWrapper = document.getElementById('quiz-wrapper');
   quizWrapper.innerHTML = `
@@ -123,7 +151,7 @@ function displayFinalScore() {
       </thead>
       <tbody>
         ${incorrectQuestions
-          .map((question, index) => `
+          .map((question) => `
             <tr>
               <td>${question.investmentNumber}</td>
               <td>${question.question}</td>
@@ -137,14 +165,7 @@ function displayFinalScore() {
   }
 }
 
-document.getElementById('next-question').onclick = async function () {
-  const quiz = await fetchQuiz();
-  displayQuestion(quiz);
-  document.getElementById('next-question').style.display = 'none';
-};
-
-// Initialize quiz
+// 初期化
 (async function initQuiz() {
-  const quiz = await fetchQuiz();
-  displayQuestion(quiz);
+  await fetchQuiz();
 })();
