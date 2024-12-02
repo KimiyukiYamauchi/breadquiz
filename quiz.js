@@ -141,9 +141,12 @@ function handleAnswer(selectedChoice, correctAnswer, explanation, quiz) {
 // 最終スコアを表示
 function displayFinalScore() {
   const quizWrapper = document.getElementById('quiz-wrapper');
+  const totalQuestions = incorrectQuestions.length + score; // 全問題数
+  const accuracy = ((score / totalQuestions) * 100).toFixed(2); // 正解率を計算（小数点2桁まで）
+
   quizWrapper.innerHTML = `
     <h2>結果発表</h2>
-    <p>あなたのスコアは ${score} 点です。</p>
+    <p>正解率: ${accuracy}%</p>
   `;
 
   if (incorrectQuestions.length > 0) {
@@ -151,7 +154,7 @@ function displayFinalScore() {
     table.innerHTML = `
       <thead>
         <tr>
-          <th>問題番号</th>
+          <th>No.</th>
           <th>問題</th>
           <th>正解</th>
         </tr>
