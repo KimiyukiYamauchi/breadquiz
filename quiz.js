@@ -2,7 +2,6 @@
 const incorrectQuestions = [];
 const incorrectAnswers = [];
 
-
 // サンプルデータ (quiz.jsから動的に渡されることを想定)
 async function fetchQuiz() {
   const response = await fetch('quiz.json');
@@ -48,6 +47,14 @@ function displayQuestion(quiz) {
 function handleAnswer(selectedChoice, correctAnswer, explanation, quiz) {
   const feedbackElement = document.getElementById('feedback');
   const nextButton = document.getElementById('next-question');
+
+  // ボタンの無効化
+  const buttons = document.querySelectorAll('#quiz-container button');
+  buttons.forEach(button => {
+    button.disabled = true; // ボタンを無効化
+    button.style.opacity = '0.6'; // 無効化時の視覚効果
+    button.style.cursor = 'not-allowed'; // ポインタ変更
+  });
 
   if (selectedChoice === correctAnswer) {
     feedbackElement.textContent = '正解！';
